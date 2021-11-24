@@ -40,4 +40,4 @@ chmod +x vegaspro14linux.sh
 
 6. When the MAGIX downloader launches, make sure you only have "VEGAS Pro 14.0" checked and leave other options unchecked. Then proceed to install VEGAS Pro 14.0.
 
-7. If all goes well, you should see the message in your terminal say `Installation of VEGAS Pro 14.0 complete!`. Then activate and launch Vegas for the first time.
+7. If all goes well, you should see the message in your terminal say `Installation of VEGAS Pro 14.0 complete!`. Activate and launch Vegas for the first time.
