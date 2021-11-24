@@ -55,7 +55,7 @@ After that, go into your PlayOnLinux's configuration window and you should see t
 
 ### Installing OFX Plugins
 
-Assuming you did the basic installation method without modifying the variables, simply navigate to the location of the installer for your OFX Plugin then execute it with the `WINEPREFIX=~/.vegaspro14` envrionment variable before the "wine" command. Like this:
+Assuming you did the basic installation method without modifying the variables, simply navigate to the location of the installer for your OFX Plugin then execute it with the `WINEPREFIX=~/.vegaspro14` envrionment variable before the `wine` command. Like this:
 ```
 WINEPREFIX=~/.vegaspro14 wine OFX-Installer.exe
 ```
