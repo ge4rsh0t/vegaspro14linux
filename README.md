@@ -26,7 +26,7 @@ This installation method is where if you do not modify the script:
 ```
 git clone https://github.com/ge4rsh0t/vegaspro14linux.git
 ```
-2. Download your installer for your copy of VEGAS Pro 14 then place the executable it in the "vegaspro14linux" directory.
+2. Download your MAGIX Downloader and Installer for your copy of VEGAS Pro 14 then place the executable it in the "vegaspro14linux" directory.
 
 3. Ensure that the script is executable by performing this command:
 ```
