@@ -18,7 +18,7 @@ There are five variables that can be easily modified to suit whatever needs it m
 - `VEGASEXE` - The executable file for running the main program. Different versions are similar to each other like "vegas140.exe", "vegas120.exe", and "vegas150.exe" as examples.
 - `ROOTVEGASFILES` - The name of the root folder for different versions of Vegas Pro located in Program Files of the "C:" directory. Version 13 and older is "Sony". Version 14 and newer is "VEGAS".
 
-## Tutorial
+## Tutorials
 ### Basic Installation
 This installation method is where if you do not modify the script:
 
@@ -41,3 +41,26 @@ chmod +x vegaspro14linux.sh
 6. When the MAGIX downloader launches, make sure you only have "VEGAS Pro 14.0" checked and leave other options unchecked. Then proceed to install VEGAS Pro 14.0.
 
 7. If all goes well, you should see the message in your terminal say `Installation of VEGAS Pro 14.0 complete!`. Activate and launch Vegas for the first time.
+
+### Installing for PlayOnLinux
+For added stability to keep Vegas Pro from getting new bugs as Wine gets updated (or to simply avoid those annoying Wine configuration window as you start up Vegas after a Wine update), you can install Vegas Pro 14 for a PlayOnLinux drive that uses a static version of Wine.
+
+Modify the `PREFIX` variable and have it install inside the "PlayOnLinux's virtual drives" folder then run the script using your terminal (Do not use the "Open a shell" option in PlayOnLinux). It should look something like this when you modify the script:
+```
+PREFIX=~/PlayOnLinux's virtual drives/vegaspro14
+```
+You can also execute the script with the default `PREFIX` variable but you would have to move the ".vegaspro14" directory found in your Home over into "PlayOnLinux's virtual drives" directory.
+
+After that, go into your PlayOnLinux's configuration window and you should see that the virtual drive has already been added. You can then change the Wine version to a static version of Wine. Then you make a new Shortcut for Vegas Pro 14 selecting vegas140.exe for easy access.
+
+### Installing OFX Plugins
+
+Assuming you did the basic installation method without modifying the variables, simply navigate to the location of the installer for your OFX Plugin then execute it with the `WINEPREFIX=~/.vegaspro14` envrionment variable before the "wine" command. Like this:
+```
+WINEPREFIX=~/.vegaspro14 wine OFX-Installer.exe
+```
+If you intend on installing multiple plugins, you can type in the `export` command for the `WINEPREFIX` enviornment variable for your Terminal session to make it last until you close it like this:
+```
+export WINEPREFIX=~/.vegaspro14
+```
+Then you simply run OFX installers with just `wine` without the need to type in the prefix everytime until you close your Terminal session.
