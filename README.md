@@ -5,7 +5,7 @@ This is a bash script made for easy installation of VEGAS Pro 14.0 on GNU/Linux 
 This script has been tested on Arch Linux but it should probably work with most distros. Other Unix-like operating systems such as BSD are not tested and may require some modification (paricularly the gnutls part).
 
 The Steam version of VEGAS Pro 14.0 is not supported.
-## Prequisites
+## Prerequisites
 You will need the following packages to run this script:
 - wine
 - winetricks
