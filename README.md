@@ -66,3 +66,13 @@ If you intend on installing multiple plugins, you can type in the `export` comma
 export WINEPREFIX=~/.vegaspro14
 ```
 Then you simply run OFX installers with just `wine` without the need to type in the prefix everytime until you close your Terminal session.
+
+## Known Issues
+
+*NOTE: This is about issues related to Vegas Pro running on Wine. If there are issues with script, then you need to refer to the issues tab for this repository.*
+
+Wine isn't perfect so there are certain things on VEGAS Pro 14 that doesn't work or work as well as it does on Windows. These such things include:
+- Inability to import and render WMV files
+- MP3 files don't work (use WAV or FLAC files instead)
+- Icons above the video preview disappear until you hover your mouse over them sometimes
+- Rendering may not be as stable as on Windows (you may need to render in pieces, then combine them together either in VEGAS, in a different video editor like Kdenlive, or by command line tools such as cat and ffmpeg)
