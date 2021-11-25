@@ -12,6 +12,23 @@ You will need the following packages to run this script:
 - gnutls (32-bit version)
 
 You are also expected to provide your own executable installer file as this is copyrighted software and I am not authorized to redistribute it. For the sake of accessibiltiy, the downloader executable "VEGAS_Pro_14_Edit_DLM_Etailer_Connect.exe" is used but you can modify the `SETUP=` variable to use a different installer if you desire to do that.
+### Arch Linux and it's derivatives (Manjaro, EndeavoursOS, Artix Linux, etc.)
+Acquiring the prerequisites can by done by this executing this command:
+```
+sudo pacman -S wine winetricks lib32-gnutls
+```
+You will need to have the "multilib" repository enabled since it is disabled by default.
+### Debian, Ubuntu, and it's derivatives (Linux Mint, Pop_OS!, MXLinux, etc.)
+Debian based distros has an outdated version of Wine and winetricks in their repositories and it's highly recommended to acquire the latest versions.
+- Wine for Ubuntu: https://wiki.winehq.org/Ubuntu
+- Wine for Debian: https://wiki.winehq.org/Debian
+- winetricks: https://github.com/Winetricks/winetricks
+
+As for gnutls, they are usually pre-installed on Ubuntu and Debian but if they aren't, they can be aquired by executing this command:
+```
+sudo apt-get install gnutls-bin
+```
+
 ## Variables
 There are five variables that can be easily modified to suit whatever needs it may be when it comes to installing Vegas Pro:
 - `PREFIX` - This is the name of the Wine prefix. It's not crucial to change this even if using a different version of Vegas Pro as long as there isn't already the prefix made with Vegas already installed.
