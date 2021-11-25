@@ -25,7 +25,7 @@ Debian based distros has an outdated version of Wine and winetricks in their rep
 - Wine for Debian: https://wiki.winehq.org/Debian
 - winetricks: https://github.com/Winetricks/winetricks
 
-"cabextract" may not be installed by default by it can easily be installed by executing:
+"cabextract" may not be installed by default but it can easily be installed by executing:
 ```
 sudo apt-get install cabextract
 ```
