@@ -36,6 +36,7 @@ fi
 
 require_binary wine
 require_binary winetricks
+require_binary cabextract
 
 if [ ! -f "/usr/lib32/libgnutls.so" ]
 then
