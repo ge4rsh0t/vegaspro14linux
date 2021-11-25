@@ -9,13 +9,14 @@ Steam version of VEGAS Pro 14.0 is not supported.
 You will need the following packages to run this script:
 - wine
 - winetricks
+- cabextract
 - gnutls (32-bit version)
 
 You are also expected to provide your own executable installer file as this is copyrighted software and I am not authorized to redistribute it. For the sake of accessibiltiy, the downloader executable "VEGAS_Pro_14_Edit_DLM_Etailer_Connect.exe" is used but you can modify the `SETUP=` variable to use a different installer if you desire to do that.
 ### Arch Linux and it's derivatives (Manjaro, EndeavoursOS, Artix Linux, etc.)
 Acquiring the prerequisites can by done by this executing this command:
 ```
-sudo pacman -S wine winetricks lib32-gnutls
+sudo pacman -S wine winetricks lib32-gnutls cabextract
 ```
 You will need to have the "multilib" repository enabled since it is disabled by default on Arch Linux.
 ### Debian, Ubuntu, and it's derivatives (Linux Mint, Pop_OS!, MX Linux, etc.)
@@ -23,6 +24,11 @@ Debian based distros has an outdated version of Wine and winetricks in their rep
 - Wine for Ubuntu: https://wiki.winehq.org/Ubuntu
 - Wine for Debian: https://wiki.winehq.org/Debian
 - winetricks: https://github.com/Winetricks/winetricks
+
+"cabextract" may not be installed by default by it can easily be installed by executing:
+```
+sudo apt-get install cabextract
+```
 
 As for gnutls, they are usually pre-installed on Ubuntu and Debian but if they aren't, they can be aquired by executing this command:
 ```
