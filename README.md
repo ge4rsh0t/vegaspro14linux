@@ -17,7 +17,7 @@ Acquiring the prerequisites can by done by this executing this command:
 ```
 sudo pacman -S wine winetricks lib32-gnutls
 ```
-You will need to have the "multilib" repository enabled since it is disabled by default.
+You will need to have the "multilib" repository enabled since it is disabled by default on Arch Linux.
 ### Debian, Ubuntu, and it's derivatives (Linux Mint, Pop_OS!, MXLinux, etc.)
 Debian based distros has an outdated version of Wine and winetricks in their repositories and it's highly recommended to acquire the latest versions.
 - Wine for Ubuntu: https://wiki.winehq.org/Ubuntu
