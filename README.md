@@ -73,6 +73,7 @@ Then you simply run OFX installers with just `wine` without the need to type in 
 
 Wine isn't perfect so there are certain things on VEGAS Pro 14 that doesn't work or work as well as it does on Windows. These such things include:
 - Inability to import and render WMV files
+- Inability to import and render MOV/M4A files (despite QuickTime being installed)
 - MP3 files don't work (use WAV or FLAC files instead)
 - Icons above the video preview disappear until you hover your mouse over them sometimes
 - Rendering may not be as stable as on Windows (you may need to render in pieces, then combine them together either in VEGAS, in a different video editor like Kdenlive, or by command line tools such as cat and ffmpeg)
