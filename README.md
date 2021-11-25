@@ -69,7 +69,7 @@ Then you simply run OFX installers with just `wine` without the need to type in 
 
 ## Known Issues
 
-*NOTE: This is about issues related to Vegas Pro running on Wine. If there are issues with script, then you need to refer to the issues tab for this repository.*
+*NOTE: This is about issues related to Vegas Pro running on Wine. If there are issues with the script, then you need to refer to the issues tab for this repository.*
 
 Wine isn't perfect so there are certain things on VEGAS Pro 14 that doesn't work or work as well as it does on Windows. These such things include:
 - Inability to import and render WMV files
