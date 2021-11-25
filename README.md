@@ -25,14 +25,9 @@ Debian based distros has an outdated version of Wine and winetricks in their rep
 - Wine for Debian: https://wiki.winehq.org/Debian
 - winetricks: https://github.com/Winetricks/winetricks
 
-"cabextract" may not be installed by default but it can easily be installed by executing:
+Other prerequisites can be installed by executing this command:
 ```
-sudo apt-get install cabextract
-```
-
-As for gnutls, they are usually pre-installed on Ubuntu and Debian but if they aren't, they can be aquired by executing this command:
-```
-sudo apt-get install gnutls-bin
+sudo apt-get install gnutls-bin cabextract
 ```
 
 ## Variables
