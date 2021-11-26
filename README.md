@@ -96,3 +96,4 @@ Wine isn't perfect so there are certain things on VEGAS Pro 14 that doesn't work
 - Icons above the video preview disappear until you hover your mouse over them sometimes
 - Rendering may not be as stable as on Windows (you may need to render in pieces, then combine them together either in VEGAS, in a different video editor like Kdenlive, or by command line tools such as cat and ffmpeg)
 - Titles and Text animations does not work. The Titles and Text generators may be usuable but it would have to be static. The text also looks a bit jagged and rough.
+- Eyedropper for the color picker in OFX effects options turns the screen black
