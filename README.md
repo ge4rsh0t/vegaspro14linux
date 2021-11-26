@@ -56,7 +56,7 @@ chmod +x vegaspro14linux.sh
 ```
 ./vegaspro14linux.sh
 ```
-5. Follow on screen instructions and go through installation wizards. After the .NET 4 install, select "I'll restart later". Make sure you don't install QuickTime with automatic updates enabled. Wait for a little while after the QuickTime installer.
+5. Follow on screen instructions and go through installation wizards. After the .NET 4 install, select "Restart Later". Make sure you don't install QuickTime with automatic updates enabled. Wait for a little while after the QuickTime installer.
 
 6. When the MAGIX downloader launches, make sure you only have "VEGAS Pro 14.0" checked and leave other options unchecked. Then proceed to install VEGAS Pro 14.0.
 
