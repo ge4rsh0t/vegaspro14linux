@@ -53,12 +53,23 @@ if [ ! -f "/usr/lib/i386-linux-gnu/libgnutls.so.30" ]; then
 fi
 }
 
+function require_gnutls_suse {
+if [ ! -f "/usr/lib/libgnutls.so.30" ]; then
+    echo "The required 32-bit binaries for 'gnutls' is not installed."
+    exit 1
+fi
+}
+
 if [ -x "$(command -v "$pacman")" ]; then
     require_gnutls_arch
 fi
 
 if [ -x "$(command -v "$dpkg")" ]; then
     require_gnutls_deb
+fi
+
+if [ -x "$(command -v "$zypper")" ]; then
+    require_gnutls_suse
 fi
 
 if [ ! -f "./$SETUP" ]; then
