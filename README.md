@@ -30,6 +30,18 @@ Other prerequisites can be installed by executing this command:
 sudo apt-get install gnutls-bin cabextract
 ```
 
+### openSUSE
+If you use Tumbleweed, you can simply just install the prerequisites like this:
+```
+sudo zypper install wine winetricks cabextract libgnutls30-32bit
+```
+
+If you use Leap, it is recommended to acquire the latest version of Wine instead of just going for what's already available in the repositories by default.
+
+You can get the repositories for the latest version of Wine and Winetricks here: https://en.opensuse.org/Wine#Repositories
+
+Once you add the repository for your version of Leap, you can then execute the same command above as you would for Tumbleweed.
+
 ## Variables
 There are five variables that can be easily modified to suit whatever needs it may be when it comes to installing Vegas Pro:
 - `PREFIX` - This is the name of the Wine prefix. It's not crucial to change this even if using a different version of Vegas Pro as long as there isn't already the prefix made with Vegas already installed.
