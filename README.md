@@ -19,7 +19,7 @@ Acquiring the prerequisites can by done by this executing this command:
 sudo pacman -S wine winetricks lib32-gnutls cabextract
 ```
 You will need to have the "multilib" repository enabled since it is disabled by default on Arch Linux.
-### Debian, Ubuntu, and it's derivatives (Linux Mint, Pop_OS!, MX Linux, etc.)
+### Debian, Ubuntu, and it's derivatives (Linux Mint, Pop!_OS, MX Linux, etc.)
 Debian based distros has an outdated version of Wine and winetricks in their repositories and it's highly recommended to acquire the latest versions.
 - Wine for Ubuntu: https://wiki.winehq.org/Ubuntu
 - Wine for Debian: https://wiki.winehq.org/Debian
