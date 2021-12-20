@@ -79,7 +79,7 @@ For added stability to keep Vegas Pro from getting new bugs as Wine gets updated
 
 Modify the `PREFIX` variable and have it install inside the "PlayOnLinux's virtual drives" folder then run the script using your terminal (Do not use the "Open a shell" option in PlayOnLinux). It should look something like this when you modify the script:
 ```
-PREFIX=~/PlayOnLinux's virtual drives/vegaspro14
+PREFIX=~/PlayOnLinux\'s\ virtual\ drives/vegaspro14
 ```
 You can also execute the script with the default `PREFIX` variable but you would have to move the ".vegaspro14" directory found in your Home over into "PlayOnLinux's virtual drives" directory.
 
