@@ -91,11 +91,17 @@ Assuming you did the basic installation method without modifying the variables, 
 ```
 WINEPREFIX=~/.vegaspro14 wine OFX-Installer.exe
 ```
+If the installer is an MSI file, then you execute it like this:
+```
+WINEPREFIX=~/.vegaspro14 msiexec /i OFX-Installer.msi
+```
 If you intend on installing multiple plugins, you can type in the `export` command for the `WINEPREFIX` enviornment variable for your Terminal session to make it last until you close it like this:
 ```
 export WINEPREFIX=~/.vegaspro14
 ```
-Then you simply run OFX installers with just `wine` without the need to type in the prefix everytime until you close your Terminal session.
+Then you simply run OFX installers with just `wine` or `msiexec /i` without the need to type in the prefix everytime until you close your Terminal session.
+
+If you installed Vegas Pro 14 on a PlayOnLinux prefix, then you can either use PlayOnLinux's "Run a .exe file in this virtual drive" button in the "Miscellaneous" tab on PlayOnLinux configuration window for Vegas Pro 14 or you can use the "Open a shell" option which is in the same tab and use `wine` or `msiexec /i` commands.
 
 ## Known Issues
 
