@@ -5,7 +5,7 @@
 ## This is useful for if you want to install a different version of 64-bit Vegas Pro. This is where you can easily change things without looking through the script.
 
 PREFIX=~/.vegaspro14
-SETUP="VEGAS_Pro_14_Edit_DLM_Etailer_Connect.exe" # Make sure this is the exact filename of the installer you plan to use
+SETUP=$1 # User should input the installer file after the "./vegaspro14linux.sh" command
 VEGASVER="VEGAS Pro 14.0" # CASE SENSITIVE! Needs to be exactly as branded! Magix brands Vegas all uppercase like VEGAS. Sony brands it like "Vegas". They should end in ".0"
 VEGASEXE="vegas140.exe" # Change acordingly based on version of Vegas Pro
 ROOTVEGASFILES="VEGAS" # Should be either "Sony" or "VEGAS". Versions 13 and older are "Sony". Versions 14 and newer are "VEGAS".
@@ -72,10 +72,17 @@ if [ -x "$(command -v "$zypper")" ]; then
     require_gnutls_suse
 fi
 
-if [ ! -f "./$SETUP" ]; then
+if [ ! -f "$SETUP" ]; then
     echo "$VEGASVER installation file not found."
-    echo "Please place '$SETUP' in the same directory where this script is located then try again."
+    echo "Please specify the location of the setup file for $VEGASVER."
     exit 1
+fi
+
+if [ $SETUP = *.msi ]; then
+    SETUPEXEC="msiexec /i"; else
+    if [ $SETUP = *.exe ]; then
+    SETUPEXEC="wine"; else
+    echo "Invalid installation file. Installation file must be either a '.EXE' file or a '.MSI' file." && exit 1; fi
 fi
 
 # Creates a log folder for trouble shooting purposes
@@ -89,11 +96,11 @@ fi
 function prefix_detect_and_ask {
 if [ -d "$PREFIX" ]; then
     echo "Wine prefix ($PREFIX) has been detected."
-    read -p "Delete this prefix and start fresh? (yes/no/cancel)" choice
+    read -p "Delete this prefix and start fresh? (yes/no/cancel): " choice
     case "$choice" in 
-        yes|YES|Yes ) echo "Deleting '$PREFIX'..." && rm -rf $PREFIX;;
-        no|NO|No ) echo "Wine prefix will not be deleted.";;
-        cancel|CANCEL|Cancel ) echo "Script aborted." && exit 1 ;; 
+        yes|YES|Yes|y|Y ) echo "Deleting '$PREFIX'..." && rm -rf $PREFIX;;
+        no|NO|No|n|N ) echo "Wine prefix will not be deleted.";;
+        cancel|CANCEL|Cancel|c|C ) echo "Script aborted." && exit 1 ;; 
         * ) echo "Invalid Answer" && prefix_detect_and_ask;;
     esac
 fi
@@ -105,27 +112,27 @@ prefix_detect_and_ask
 
 if [ ! -d "$PREFIX" ]; then
     echo "Creating new Wine prefix..."
-    WINEPREFIX=$PREFIX WINEDLLOVERRIDES="mscoree=d;mshtml=d" wineboot -u > ./logs/1-prefix-create.txt 2>&1
+    WINEPREFIX=$PREFIX WINEDLLOVERRIDES="mscoree=d;mshtml=d" wineboot -u > ./logs/1-prefix-create.log 2>&1
     echo "Created $PREFIX"
 fi
 
 # Components installation and setup process
 
 echo "Installing components. Please wait..."
-WINEPREFIX=$PREFIX winetricks "quartz" > ./logs/2-components-1.txt 2>&1
+WINEPREFIX=$PREFIX winetricks "quartz" > ./logs/2-components-1.log 2>&1
 
 echo "Go through installation prompts to continue installing components."
-WINEPREFIX=$PREFIX winetricks "vcrun2005" "vcrun2008" "vcrun2010" "vcrun2012" "vcrun2013" "vcrun2015" "dotnet20sp2" "dotnet40" "quicktime76" > ./logs/3-components-2.txt 2>&1
+WINEPREFIX=$PREFIX winetricks "vcrun2005" "vcrun2008" "vcrun2010" "vcrun2012" "vcrun2013" "vcrun2015" "dotnet20sp2" "dotnet40" "quicktime76" > ./logs/3-components-2.log 2>&1
 
 echo "Installing more components. This may take a while..."
-WINEPREFIX=$PREFIX winetricks "corefonts" "d3dx10" "d3dx11_42" "d3dx11_43" "d3dx9" "directmusic" "directplay" "dsound" > ./logs/4-components-4.txt 2>&1
+WINEPREFIX=$PREFIX winetricks "corefonts" "d3dx10" "d3dx11_42" "d3dx11_43" "d3dx9" "directmusic" "directplay" "dsound" > ./logs/4-components-3.log 2>&1
 
 echo "Done!"
 
 # Installing Vegas Pro
 
 echo "Installing $VEGASVER..."
-WINEPREFIX=$PREFIX wine "./$SETUP" > ./logs/5-vegas-setup.txt 2>&1
+WINEPREFIX=$PREFIX $SETUPEXEC $SETUP > ./logs/5-vegas-setup.log 2>&1
 
 # For whenever the installer fails to do what it's supposed to do or if the user cancels the installer
 
