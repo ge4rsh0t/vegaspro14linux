@@ -12,7 +12,7 @@ You will need the following packages to run this script:
 - cabextract
 - gnutls (32-bit version)
 
-You are also expected to provide your own executable installer file as this is copyrighted software and I am not authorized to redistribute it. For the sake of accessibiltiy, the downloader executable "VEGAS_Pro_14_Edit_DLM_Etailer_Connect.exe" is used but you can modify the `SETUP=` variable to use a different installer if you desire to do that.
+You are also expected to provide your own executable installer file as this is copyrighted software and I am not authorized to redistribute it.
 ### Arch Linux and it's derivatives (Manjaro, EndeavourOS, Artix Linux, etc.)
 Acquiring the prerequisites can by done by this executing this command:
 ```
@@ -45,7 +45,7 @@ Once you add the repository for your version of Leap, you can then execute the s
 ## Variables
 There are five variables that can be easily modified to suit whatever needs it may be when it comes to installing Vegas Pro:
 - `PREFIX` - This is the name of the Wine prefix. It's not crucial to change this even if using a different version of Vegas Pro as long as there isn't already the prefix made with Vegas already installed.
-- `SETUP` - This is the filename of the installer that would be used within the same folder as the script. This can be easily changed to whatever other installer desired whether it is an offline installer for VEGAS Pro 14 or an installer for a different version of Vegas Pro.
+- `SETUP` - This is the filename of the installer that would be used within the same folder as the script. This is set to take user input as they are about to launch the script.
 - `VEGASVER` - Needs to be exactly as branded. Magix brands Vegas all uppercase like "VEGAS". Sony brands it like "Vegas". They should end in ".0". Like "VEGAS Pro 14.0" or "Vegas Pro 12.0".
 - `VEGASEXE` - The executable file for running the main program. Different versions are similar to each other like "vegas140.exe", "vegas120.exe", and "vegas150.exe" as examples.
 - `ROOTVEGASFILES` - The name of the root folder for different versions of Vegas Pro located in Program Files of the "C:" directory. Version 13 and older is "Sony". Version 14 and newer is "VEGAS".
@@ -58,19 +58,21 @@ This installation method is where if you do not modify the script:
 ```
 git clone https://github.com/ge4rsh0t/vegaspro14linux.git
 ```
-2. Download your MAGIX Downloader and Installer for your copy of VEGAS Pro 14 then place the executable it in the "vegaspro14linux" directory.
+2. Place your installer for VEGAS Pro 14.0 in the "vegaspro14linux" directory.
 
 3. Ensure that the script is executable by performing this command:
 ```
 chmod +x vegaspro14linux.sh
 ```
-4. Run the script:
+4. Type in the location of the script and specifiy the name of the installation file to run the script like this:
 ```
-./vegaspro14linux.sh
+./vegaspro14linux.sh Vegas-Installer.exe
 ```
+Replace `Vegas-Installer.exe` with an installer you plan to use.
+
 5. Follow on screen instructions and go through installation wizards. After the .NET 4 install, select "Restart Later". Make sure you don't install QuickTime with automatic updates enabled. Wait for a little while after the QuickTime installer.
 
-6. When the MAGIX downloader launches, make sure you only have "VEGAS Pro 14.0" checked and leave other options unchecked. Then proceed to install VEGAS Pro 14.0.
+6. Proceed to install VEGAS Pro 14.0.
 
 7. If all goes well, you should see the message in your terminal say `Installation of VEGAS Pro 14.0 complete!`. Activate and launch Vegas for the first time.
 
