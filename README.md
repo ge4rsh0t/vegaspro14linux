@@ -1,3 +1,4 @@
+**NOTE:** This repository is no longer maintained here on GitHub. I have moved to GitLab instead. You can find the GitLab repository here: https://gitlab.com/gearshot/vegaspro14linux
 # VEGAS Pro 14 for Linux
 ![Vegas Pro 14 running on Linux](https://i.imgur.com/afIPpAy.png)
 This is a bash script made for easy installation of VEGAS Pro 14.0 on GNU/Linux operating systems using Wine and Winetricks. Primarily, this is made for VEGAS Pro 14 but this script can also be modified to install other versions of Vegas Pro as long as it's made around the same decade as 14.
